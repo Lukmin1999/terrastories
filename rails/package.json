@@ -2,10 +2,11 @@
   "name": "app",
   "private": true,
   "scripts": {
-    "jest": "jest",
-    "eslint": "eslint",
+    "test": "jest",
+        "eslint": "eslint",
     "lint": "eslint \"app/javascript/**\""
   },
+
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
@@ -42,20 +43,11 @@
     "webpack-dev-server": "3.1.11"
   },
   "jest": {
-    "setupFiles": [
-      "<rootDir>/spec/javascript/i18n-mock.js"
-    ],
     "roots": [
       "spec/javascript"
     ],
-    "collectCoverage": true,
-    "coverageDirectory": "spec/javascript/coverage",
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/spec/javascript/coverage/**"
-    ],
     "moduleDirectories": [
+      "app/javascript",
       "node_modules"
     ]
   }
